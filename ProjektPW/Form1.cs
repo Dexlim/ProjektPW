@@ -13,6 +13,8 @@ namespace ProjektPW
     public partial class Form1 : Form
     {
         private bool timer1_status = false;
+        private bool pause_status = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -32,6 +34,41 @@ namespace ProjektPW
         {
             label1.Text = Convert.ToString(trackBar1.Value)+"[ms]";
             timer1.Interval = trackBar1.Value;
+        }
+        private void trackBar1_MouseUp(object sender, EventArgs e)
+        {
+           logBox.Text+="Changed timer delay to: "+label1.Text+"\n";
+        }
+
+        private void pauseButton_Click(object sender, EventArgs e)
+        {
+            if (pause_status == false)
+            {
+                pauseButton.Text = "Resume";
+                logBox.Text = logBox.Text + "Simulation paused.\n";
+                timer1.Enabled = false;
+            }
+            else
+            {
+                pauseButton.Text = "Pause";
+                logBox.Text = logBox.Text + "Simulation resumed.\n";
+                timer1.Enabled = true;
+            }
+            pause_status = !pause_status;
+            
+        }
+
+        private void restartButton_Click(object sender, EventArgs e)
+        {
+                string message = "Are you sure you want to restart simulation?";
+                string caption = "Restart";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result;
+
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                    Application.Restart();
+            
         }
     }
 }

@@ -36,9 +36,10 @@ namespace ProjektPW
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.pauseButton = new System.Windows.Forms.Button();
+            this.restartButton = new System.Windows.Forms.Button();
+            this.logBox = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +66,7 @@ namespace ProjektPW
             this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.trackBar1.Value = 550;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            this.trackBar1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBar1_MouseUp);
             // 
             // label1
             // 
@@ -98,31 +100,47 @@ namespace ProjektPW
             this.radioButton1.TabStop = true;
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // pauseButton
             // 
-            this.button1.Location = new System.Drawing.Point(882, 540);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Pause";
-            this.button1.UseVisualStyleBackColor = true;
+            this.pauseButton.Location = new System.Drawing.Point(882, 540);
+            this.pauseButton.Name = "pauseButton";
+            this.pauseButton.Size = new System.Drawing.Size(94, 29);
+            this.pauseButton.TabIndex = 3;
+            this.pauseButton.Text = "Pause";
+            this.pauseButton.UseVisualStyleBackColor = true;
+            this.pauseButton.Click += new System.EventHandler(this.pauseButton_Click);
             // 
-            // button2
+            // restartButton
             // 
-            this.button2.Location = new System.Drawing.Point(1156, 540);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 29);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Restart";
-            this.button2.UseVisualStyleBackColor = true;
+            this.restartButton.Location = new System.Drawing.Point(1156, 540);
+            this.restartButton.Name = "restartButton";
+            this.restartButton.Size = new System.Drawing.Size(94, 29);
+            this.restartButton.TabIndex = 4;
+            this.restartButton.Text = "Restart";
+            this.restartButton.UseVisualStyleBackColor = true;
+            this.restartButton.Click += new System.EventHandler(this.restartButton_Click);
             // 
-            // richTextBox1
+            // logBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(882, 12);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(368, 522);
-            this.richTextBox1.TabIndex = 5;
-            this.richTextBox1.Text = "";
+            this.logBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.logBox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.logBox.Location = new System.Drawing.Point(882, 12);
+            this.logBox.Name = "logBox";
+            this.logBox.ReadOnly = true;
+            this.logBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.logBox.Size = new System.Drawing.Size(368, 522);
+            this.logBox.TabIndex = 5;
+            this.logBox.Text = "";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(-1, 656);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(183, 17);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Wojciech Zalewski WCY19IY4S1";
             // 
             // Form1
             // 
@@ -130,16 +148,17 @@ namespace ProjektPW
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1262, 673);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.logBox);
+            this.Controls.Add(this.restartButton);
+            this.Controls.Add(this.pauseButton);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "ProjektPW Zalewski IY4";
+            this.Text = "ProjektPW Zadanie 7";
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -155,9 +174,10 @@ namespace ProjektPW
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button pauseButton;
+        private System.Windows.Forms.Button restartButton;
+        private System.Windows.Forms.RichTextBox logBox;
+        private System.Windows.Forms.Label label2;
     }
 }
 
