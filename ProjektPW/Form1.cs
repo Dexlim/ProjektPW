@@ -10,12 +10,14 @@ using System.Windows.Forms;
 
 namespace ProjektPW
 {
-    public partial class Form1 : Form
+    public partial class setButton : Form
     {
         private bool timer1_status = false;
         private bool pause_status = false;
+        private int clock_minutes = 0;
+        private int clock_seconds = 0;
 
-        public Form1()
+        public setButton()
         {
             InitializeComponent();
         }
@@ -37,7 +39,7 @@ namespace ProjektPW
         }
         private void trackBar1_MouseUp(object sender, EventArgs e)
         {
-           logBox.Text+="Changed timer delay to: "+label1.Text+"\n";
+           logBox.Text+= clock1_Time() + "Changed timer delay to: " +label1.Text+"\n";
         }
 
         private void pauseButton_Click(object sender, EventArgs e)
@@ -45,13 +47,13 @@ namespace ProjektPW
             if (pause_status == false)
             {
                 pauseButton.Text = "Resume";
-                logBox.Text = logBox.Text + "Simulation paused.\n";
+                logBox.Text += clock1_Time() + "Simulation paused.\n";
                 timer1.Enabled = false;
             }
             else
             {
                 pauseButton.Text = "Pause";
-                logBox.Text = logBox.Text + "Simulation resumed.\n";
+                logBox.Text += clock1_Time() + "Simulation resumed.\n";
                 timer1.Enabled = true;
             }
             pause_status = !pause_status;
@@ -69,6 +71,56 @@ namespace ProjektPW
                 if (result == System.Windows.Forms.DialogResult.Yes)
                     Application.Restart();
             
+        }
+
+        private void clock1_Tick(object sender, EventArgs e)
+        {
+            clock_seconds++;
+            if(clock_seconds==60)
+            {
+                clock_seconds = 0;
+                clock_minutes++;
+            }
+        }
+        private string clock1_Time()
+        {
+            string result = "[";
+            if (clock_minutes < 10)
+                result += "0";
+            result += Convert.ToString(clock_minutes)+":";
+            if (clock_seconds < 10)
+                result += "0";
+            result += Convert.ToString(clock_seconds) + "]: ";
+            return result;
+        }
+
+        private void hurryInput_Click(object sender, EventArgs e)
+        { 
+            toolTip1.Show("Values: 0-10", hurryInput, 0, -30, 1000);
+        }
+        private void patientInput_Click(object sender, EventArgs e)
+        {
+            toolTip1.Show("Values: 0-10", patientInput, 0, -30, 1000);
+        }
+
+        private void waitInput_Click(object sender, EventArgs e)
+        {
+            toolTip1.Show("Values: 1-5", waitInput, 0, -30, 1000);
+        }
+
+        private void shelvesInput_Click(object sender, EventArgs e)
+        {
+            toolTip1.Show("Values: 1-15", shelvesInput, 0, -30, 1000);
+        }
+
+        private void amountInput_Click(object sender, EventArgs e)
+        {
+            toolTip1.Show("Values: 1-4", amountInput, 0, -30, 1000);
+        }
+
+        private void quantityInput_Click(object sender, EventArgs e)
+        {
+            toolTip1.Show("Values: 1-100", quantityInput, 0, -30, 1000);
         }
     }
 }
