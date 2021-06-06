@@ -88,9 +88,53 @@ namespace ProjektPW
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.clock1 = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.client1 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.sign1 = new System.Windows.Forms.RadioButton();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.sign2 = new System.Windows.Forms.RadioButton();
+            this.client2 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.sign3 = new System.Windows.Forms.RadioButton();
+            this.client3 = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.sign4 = new System.Windows.Forms.RadioButton();
+            this.client4 = new System.Windows.Forms.Label();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.sign5 = new System.Windows.Forms.RadioButton();
+            this.client5 = new System.Windows.Forms.Label();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.sign6 = new System.Windows.Forms.RadioButton();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.sign7 = new System.Windows.Forms.RadioButton();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.sign8 = new System.Windows.Forms.RadioButton();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.sign9 = new System.Windows.Forms.RadioButton();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.sign10 = new System.Windows.Forms.RadioButton();
+            this.client6 = new System.Windows.Forms.Label();
+            this.client7 = new System.Windows.Forms.Label();
+            this.client8 = new System.Windows.Forms.Label();
+            this.client9 = new System.Windows.Forms.Label();
+            this.client10 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            this.groupBox13.SuspendLayout();
+            this.groupBox14.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -130,9 +174,9 @@ namespace ProjektPW
             // 
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(877, 575);
+            this.groupBox1.Location = new System.Drawing.Point(882, 575);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(373, 92);
+            this.groupBox1.Size = new System.Drawing.Size(368, 92);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Timer";
@@ -427,7 +471,7 @@ namespace ProjektPW
             // 
             // shelvesInput
             // 
-            this.shelvesInput.Location = new System.Drawing.Point(439, 500);
+            this.shelvesInput.Location = new System.Drawing.Point(519, 543);
             this.shelvesInput.Name = "shelvesInput";
             this.shelvesInput.Size = new System.Drawing.Size(37, 27);
             this.shelvesInput.TabIndex = 12;
@@ -436,7 +480,7 @@ namespace ProjektPW
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(317, 503);
+            this.label3.Location = new System.Drawing.Point(397, 546);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(116, 20);
             this.label3.TabIndex = 13;
@@ -445,7 +489,7 @@ namespace ProjektPW
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 507);
+            this.label4.Location = new System.Drawing.Point(14, 550);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(121, 20);
             this.label4.TabIndex = 14;
@@ -454,7 +498,7 @@ namespace ProjektPW
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 540);
+            this.label5.Location = new System.Drawing.Point(16, 583);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 20);
             this.label5.TabIndex = 15;
@@ -462,7 +506,7 @@ namespace ProjektPW
             // 
             // patientInput
             // 
-            this.patientInput.Location = new System.Drawing.Point(152, 535);
+            this.patientInput.Location = new System.Drawing.Point(141, 578);
             this.patientInput.Name = "patientInput";
             this.patientInput.Size = new System.Drawing.Size(37, 27);
             this.patientInput.TabIndex = 12;
@@ -470,9 +514,9 @@ namespace ProjektPW
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(195, 500);
+            this.button1.Location = new System.Drawing.Point(201, 524);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 96);
+            this.button1.Size = new System.Drawing.Size(171, 124);
             this.button1.TabIndex = 16;
             this.button1.Text = "Set";
             this.button1.UseVisualStyleBackColor = true;
@@ -480,7 +524,7 @@ namespace ProjektPW
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 572);
+            this.label6.Location = new System.Drawing.Point(16, 615);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 20);
             this.label6.TabIndex = 17;
@@ -488,7 +532,7 @@ namespace ProjektPW
             // 
             // waitInput
             // 
-            this.waitInput.Location = new System.Drawing.Point(152, 569);
+            this.waitInput.Location = new System.Drawing.Point(141, 612);
             this.waitInput.Name = "waitInput";
             this.waitInput.Size = new System.Drawing.Size(37, 27);
             this.waitInput.TabIndex = 18;
@@ -497,7 +541,7 @@ namespace ProjektPW
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(317, 539);
+            this.label8.Location = new System.Drawing.Point(397, 582);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(118, 20);
             this.label8.TabIndex = 20;
@@ -505,7 +549,7 @@ namespace ProjektPW
             // 
             // amountInput
             // 
-            this.amountInput.Location = new System.Drawing.Point(439, 535);
+            this.amountInput.Location = new System.Drawing.Point(519, 578);
             this.amountInput.Name = "amountInput";
             this.amountInput.Size = new System.Drawing.Size(37, 27);
             this.amountInput.TabIndex = 21;
@@ -513,7 +557,7 @@ namespace ProjektPW
             // 
             // quantityInput
             // 
-            this.quantityInput.Location = new System.Drawing.Point(439, 569);
+            this.quantityInput.Location = new System.Drawing.Point(519, 612);
             this.quantityInput.Name = "quantityInput";
             this.quantityInput.Size = new System.Drawing.Size(37, 27);
             this.quantityInput.TabIndex = 22;
@@ -522,7 +566,7 @@ namespace ProjektPW
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(317, 574);
+            this.label9.Location = new System.Drawing.Point(397, 617);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(121, 20);
             this.label9.TabIndex = 23;
@@ -531,7 +575,7 @@ namespace ProjektPW
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.hurryInput);
-            this.groupBox3.Location = new System.Drawing.Point(23, 480);
+            this.groupBox3.Location = new System.Drawing.Point(12, 523);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(170, 126);
             this.groupBox3.TabIndex = 24;
@@ -548,7 +592,7 @@ namespace ProjektPW
             // 
             // groupBox4
             // 
-            this.groupBox4.Location = new System.Drawing.Point(313, 481);
+            this.groupBox4.Location = new System.Drawing.Point(393, 524);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(172, 125);
             this.groupBox4.TabIndex = 25;
@@ -561,12 +605,358 @@ namespace ProjektPW
             this.clock1.Interval = 1000;
             this.clock1.Tick += new System.EventHandler(this.clock1_Tick);
             // 
+            // client1
+            // 
+            this.client1.AutoSize = true;
+            this.client1.Location = new System.Drawing.Point(582, 69);
+            this.client1.Name = "client1";
+            this.client1.Size = new System.Drawing.Size(52, 20);
+            this.client1.TabIndex = 26;
+            this.client1.Text = "Status:";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.sign1);
+            this.groupBox5.Location = new System.Drawing.Point(571, 51);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(305, 49);
+            this.groupBox5.TabIndex = 27;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Client1";
+            // 
+            // sign1
+            // 
+            this.sign1.AutoSize = true;
+            this.sign1.BackColor = System.Drawing.SystemColors.Control;
+            this.sign1.Enabled = false;
+            this.sign1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.sign1.Location = new System.Drawing.Point(282, 20);
+            this.sign1.Name = "sign1";
+            this.sign1.Size = new System.Drawing.Size(17, 16);
+            this.sign1.TabIndex = 0;
+            this.sign1.UseVisualStyleBackColor = false;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.sign2);
+            this.groupBox6.Location = new System.Drawing.Point(571, 106);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(305, 49);
+            this.groupBox6.TabIndex = 27;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Client2";
+            // 
+            // sign2
+            // 
+            this.sign2.AutoSize = true;
+            this.sign2.Enabled = false;
+            this.sign2.Location = new System.Drawing.Point(282, 20);
+            this.sign2.Name = "sign2";
+            this.sign2.Size = new System.Drawing.Size(17, 16);
+            this.sign2.TabIndex = 0;
+            this.sign2.UseVisualStyleBackColor = true;
+            // 
+            // client2
+            // 
+            this.client2.AutoSize = true;
+            this.client2.Location = new System.Drawing.Point(582, 124);
+            this.client2.Name = "client2";
+            this.client2.Size = new System.Drawing.Size(52, 20);
+            this.client2.TabIndex = 26;
+            this.client2.Text = "Status:";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.sign3);
+            this.groupBox7.Location = new System.Drawing.Point(571, 161);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(305, 49);
+            this.groupBox7.TabIndex = 27;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Client3";
+            // 
+            // sign3
+            // 
+            this.sign3.AutoSize = true;
+            this.sign3.Enabled = false;
+            this.sign3.Location = new System.Drawing.Point(282, 20);
+            this.sign3.Name = "sign3";
+            this.sign3.Size = new System.Drawing.Size(17, 16);
+            this.sign3.TabIndex = 0;
+            this.sign3.UseVisualStyleBackColor = true;
+            // 
+            // client3
+            // 
+            this.client3.AutoSize = true;
+            this.client3.Location = new System.Drawing.Point(582, 179);
+            this.client3.Name = "client3";
+            this.client3.Size = new System.Drawing.Size(52, 20);
+            this.client3.TabIndex = 26;
+            this.client3.Text = "Status:";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.sign4);
+            this.groupBox8.Location = new System.Drawing.Point(571, 216);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(305, 49);
+            this.groupBox8.TabIndex = 27;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Client4";
+            // 
+            // sign4
+            // 
+            this.sign4.AutoSize = true;
+            this.sign4.Enabled = false;
+            this.sign4.Location = new System.Drawing.Point(282, 20);
+            this.sign4.Name = "sign4";
+            this.sign4.Size = new System.Drawing.Size(17, 16);
+            this.sign4.TabIndex = 0;
+            this.sign4.UseVisualStyleBackColor = true;
+            // 
+            // client4
+            // 
+            this.client4.AutoSize = true;
+            this.client4.Location = new System.Drawing.Point(582, 234);
+            this.client4.Name = "client4";
+            this.client4.Size = new System.Drawing.Size(52, 20);
+            this.client4.TabIndex = 26;
+            this.client4.Text = "Status:";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.sign5);
+            this.groupBox9.Location = new System.Drawing.Point(571, 271);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(305, 49);
+            this.groupBox9.TabIndex = 27;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Client5";
+            // 
+            // sign5
+            // 
+            this.sign5.AutoSize = true;
+            this.sign5.Enabled = false;
+            this.sign5.Location = new System.Drawing.Point(282, 20);
+            this.sign5.Name = "sign5";
+            this.sign5.Size = new System.Drawing.Size(17, 16);
+            this.sign5.TabIndex = 0;
+            this.sign5.UseVisualStyleBackColor = true;
+            // 
+            // client5
+            // 
+            this.client5.AutoSize = true;
+            this.client5.Location = new System.Drawing.Point(582, 289);
+            this.client5.Name = "client5";
+            this.client5.Size = new System.Drawing.Size(52, 20);
+            this.client5.TabIndex = 26;
+            this.client5.Text = "Status:";
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.sign6);
+            this.groupBox10.Location = new System.Drawing.Point(571, 380);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(305, 49);
+            this.groupBox10.TabIndex = 27;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Client6";
+            // 
+            // sign6
+            // 
+            this.sign6.AutoSize = true;
+            this.sign6.BackColor = System.Drawing.SystemColors.Control;
+            this.sign6.Enabled = false;
+            this.sign6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.sign6.Location = new System.Drawing.Point(282, 20);
+            this.sign6.Name = "sign6";
+            this.sign6.Size = new System.Drawing.Size(17, 16);
+            this.sign6.TabIndex = 0;
+            this.sign6.UseVisualStyleBackColor = false;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.sign7);
+            this.groupBox11.Location = new System.Drawing.Point(571, 435);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(305, 49);
+            this.groupBox11.TabIndex = 27;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Client7";
+            // 
+            // sign7
+            // 
+            this.sign7.AutoSize = true;
+            this.sign7.Enabled = false;
+            this.sign7.Location = new System.Drawing.Point(282, 20);
+            this.sign7.Name = "sign7";
+            this.sign7.Size = new System.Drawing.Size(17, 16);
+            this.sign7.TabIndex = 0;
+            this.sign7.UseVisualStyleBackColor = true;
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.sign8);
+            this.groupBox12.Location = new System.Drawing.Point(571, 490);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(305, 49);
+            this.groupBox12.TabIndex = 27;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Client8";
+            // 
+            // sign8
+            // 
+            this.sign8.AutoSize = true;
+            this.sign8.Enabled = false;
+            this.sign8.Location = new System.Drawing.Point(282, 20);
+            this.sign8.Name = "sign8";
+            this.sign8.Size = new System.Drawing.Size(17, 16);
+            this.sign8.TabIndex = 0;
+            this.sign8.UseVisualStyleBackColor = true;
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.sign9);
+            this.groupBox13.Location = new System.Drawing.Point(571, 545);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(305, 49);
+            this.groupBox13.TabIndex = 27;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Client9";
+            // 
+            // sign9
+            // 
+            this.sign9.AutoSize = true;
+            this.sign9.Enabled = false;
+            this.sign9.Location = new System.Drawing.Point(282, 20);
+            this.sign9.Name = "sign9";
+            this.sign9.Size = new System.Drawing.Size(17, 16);
+            this.sign9.TabIndex = 0;
+            this.sign9.UseVisualStyleBackColor = true;
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Controls.Add(this.sign10);
+            this.groupBox14.Location = new System.Drawing.Point(571, 600);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(305, 49);
+            this.groupBox14.TabIndex = 27;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "Client10";
+            // 
+            // sign10
+            // 
+            this.sign10.AutoSize = true;
+            this.sign10.Enabled = false;
+            this.sign10.Location = new System.Drawing.Point(282, 20);
+            this.sign10.Name = "sign10";
+            this.sign10.Size = new System.Drawing.Size(17, 16);
+            this.sign10.TabIndex = 0;
+            this.sign10.UseVisualStyleBackColor = true;
+            // 
+            // client6
+            // 
+            this.client6.AutoSize = true;
+            this.client6.Location = new System.Drawing.Point(582, 398);
+            this.client6.Name = "client6";
+            this.client6.Size = new System.Drawing.Size(52, 20);
+            this.client6.TabIndex = 26;
+            this.client6.Text = "Status:";
+            // 
+            // client7
+            // 
+            this.client7.AutoSize = true;
+            this.client7.Location = new System.Drawing.Point(582, 453);
+            this.client7.Name = "client7";
+            this.client7.Size = new System.Drawing.Size(52, 20);
+            this.client7.TabIndex = 26;
+            this.client7.Text = "Status:";
+            // 
+            // client8
+            // 
+            this.client8.AutoSize = true;
+            this.client8.Location = new System.Drawing.Point(582, 508);
+            this.client8.Name = "client8";
+            this.client8.Size = new System.Drawing.Size(52, 20);
+            this.client8.TabIndex = 26;
+            this.client8.Text = "Status:";
+            // 
+            // client9
+            // 
+            this.client9.AutoSize = true;
+            this.client9.Location = new System.Drawing.Point(582, 563);
+            this.client9.Name = "client9";
+            this.client9.Size = new System.Drawing.Size(52, 20);
+            this.client9.TabIndex = 26;
+            this.client9.Text = "Status:";
+            // 
+            // client10
+            // 
+            this.client10.AutoSize = true;
+            this.client10.Location = new System.Drawing.Point(582, 618);
+            this.client10.Name = "client10";
+            this.client10.Size = new System.Drawing.Size(52, 20);
+            this.client10.TabIndex = 26;
+            this.client10.Text = "Status:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(643, 11);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(166, 31);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Patient clients";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(627, 346);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(197, 31);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "Clients in a hurry";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(16, 425);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(147, 20);
+            this.label11.TabIndex = 29;
+            this.label11.Text = "Clients that resigned:\r\n";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(16, 453);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(104, 20);
+            this.label12.TabIndex = 30;
+            this.label12.Text = "Sold products:";
+            // 
             // setButton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.client10);
+            this.Controls.Add(this.client5);
+            this.Controls.Add(this.client9);
+            this.Controls.Add(this.client4);
+            this.Controls.Add(this.client8);
+            this.Controls.Add(this.client3);
+            this.Controls.Add(this.client7);
+            this.Controls.Add(this.client2);
+            this.Controls.Add(this.client6);
+            this.Controls.Add(this.client1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.quantityInput);
             this.Controls.Add(this.amountInput);
@@ -618,6 +1008,16 @@ namespace ProjektPW
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox14);
+            this.Controls.Add(this.groupBox13);
+            this.Controls.Add(this.groupBox9);
+            this.Controls.Add(this.groupBox12);
+            this.Controls.Add(this.groupBox8);
+            this.Controls.Add(this.groupBox11);
+            this.Controls.Add(this.groupBox7);
+            this.Controls.Add(this.groupBox10);
+            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.groupBox5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -628,6 +1028,26 @@ namespace ProjektPW
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
+            this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -692,6 +1112,40 @@ namespace ProjektPW
         private System.Windows.Forms.Timer clock1;
         private System.Windows.Forms.TextBox hurryInput;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label client1;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.RadioButton sign1;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.RadioButton sign2;
+        private System.Windows.Forms.Label client2;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.RadioButton sign3;
+        private System.Windows.Forms.Label client3;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.RadioButton sign4;
+        private System.Windows.Forms.Label client4;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.RadioButton sign5;
+        private System.Windows.Forms.Label client5;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.RadioButton sign6;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.RadioButton sign7;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.RadioButton sign8;
+        private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.RadioButton sign9;
+        private System.Windows.Forms.GroupBox groupBox14;
+        private System.Windows.Forms.RadioButton sign10;
+        private System.Windows.Forms.Label client6;
+        private System.Windows.Forms.Label client7;
+        private System.Windows.Forms.Label client8;
+        private System.Windows.Forms.Label client9;
+        private System.Windows.Forms.Label client10;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
     }
 }
 
