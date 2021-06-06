@@ -122,6 +122,8 @@ namespace ProjektPW
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.timeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -139,7 +141,6 @@ namespace ProjektPW
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
             this.timer1.Interval = 550;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
@@ -195,16 +196,19 @@ namespace ProjektPW
             // 
             // pauseButton
             // 
+            this.pauseButton.Enabled = false;
             this.pauseButton.Location = new System.Drawing.Point(882, 540);
             this.pauseButton.Name = "pauseButton";
             this.pauseButton.Size = new System.Drawing.Size(94, 29);
             this.pauseButton.TabIndex = 3;
+            this.pauseButton.TabStop = false;
             this.pauseButton.Text = "Pause";
             this.pauseButton.UseVisualStyleBackColor = true;
             this.pauseButton.Click += new System.EventHandler(this.pauseButton_Click);
             // 
             // restartButton
             // 
+            this.restartButton.Enabled = false;
             this.restartButton.Location = new System.Drawing.Point(1156, 540);
             this.restartButton.Name = "restartButton";
             this.restartButton.Size = new System.Drawing.Size(94, 29);
@@ -216,6 +220,7 @@ namespace ProjektPW
             // logBox
             // 
             this.logBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.logBox.Enabled = false;
             this.logBox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.logBox.Location = new System.Drawing.Point(882, 12);
             this.logBox.Name = "logBox";
@@ -229,7 +234,7 @@ namespace ProjektPW
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(-1, 656);
+            this.label2.Location = new System.Drawing.Point(-3, 652);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(183, 17);
             this.label2.TabIndex = 6;
@@ -237,11 +242,13 @@ namespace ProjektPW
             // 
             // shelf1
             // 
+            this.shelf1.Enabled = false;
             this.shelf1.Location = new System.Drawing.Point(28, 30);
             this.shelf1.Name = "shelf1";
             this.shelf1.Size = new System.Drawing.Size(100, 100);
             this.shelf1.TabIndex = 7;
             this.shelf1.UseVisualStyleBackColor = true;
+            this.shelf1.Visible = false;
             // 
             // progressBar1
             // 
@@ -249,14 +256,17 @@ namespace ProjektPW
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(100, 10);
             this.progressBar1.TabIndex = 8;
+            this.progressBar1.Visible = false;
             // 
             // shelf2
             // 
+            this.shelf2.Enabled = false;
             this.shelf2.Location = new System.Drawing.Point(135, 30);
             this.shelf2.Name = "shelf2";
             this.shelf2.Size = new System.Drawing.Size(100, 100);
             this.shelf2.TabIndex = 9;
             this.shelf2.UseVisualStyleBackColor = true;
+            this.shelf2.Visible = false;
             // 
             // progressBar2
             // 
@@ -264,14 +274,17 @@ namespace ProjektPW
             this.progressBar2.Name = "progressBar2";
             this.progressBar2.Size = new System.Drawing.Size(100, 10);
             this.progressBar2.TabIndex = 10;
+            this.progressBar2.Visible = false;
             // 
             // shelf3
             // 
+            this.shelf3.Enabled = false;
             this.shelf3.Location = new System.Drawing.Point(241, 30);
             this.shelf3.Name = "shelf3";
             this.shelf3.Size = new System.Drawing.Size(100, 100);
             this.shelf3.TabIndex = 9;
             this.shelf3.UseVisualStyleBackColor = true;
+            this.shelf3.Visible = false;
             // 
             // progressBar3
             // 
@@ -279,14 +292,17 @@ namespace ProjektPW
             this.progressBar3.Name = "progressBar3";
             this.progressBar3.Size = new System.Drawing.Size(100, 10);
             this.progressBar3.TabIndex = 10;
+            this.progressBar3.Visible = false;
             // 
             // shelf4
             // 
+            this.shelf4.Enabled = false;
             this.shelf4.Location = new System.Drawing.Point(347, 30);
             this.shelf4.Name = "shelf4";
             this.shelf4.Size = new System.Drawing.Size(100, 100);
             this.shelf4.TabIndex = 9;
             this.shelf4.UseVisualStyleBackColor = true;
+            this.shelf4.Visible = false;
             // 
             // progressBar4
             // 
@@ -294,14 +310,17 @@ namespace ProjektPW
             this.progressBar4.Name = "progressBar4";
             this.progressBar4.Size = new System.Drawing.Size(100, 10);
             this.progressBar4.TabIndex = 10;
+            this.progressBar4.Visible = false;
             // 
             // shelf5
             // 
+            this.shelf5.Enabled = false;
             this.shelf5.Location = new System.Drawing.Point(453, 30);
             this.shelf5.Name = "shelf5";
             this.shelf5.Size = new System.Drawing.Size(100, 100);
             this.shelf5.TabIndex = 9;
             this.shelf5.UseVisualStyleBackColor = true;
+            this.shelf5.Visible = false;
             // 
             // progressBar5
             // 
@@ -309,14 +328,17 @@ namespace ProjektPW
             this.progressBar5.Name = "progressBar5";
             this.progressBar5.Size = new System.Drawing.Size(100, 10);
             this.progressBar5.TabIndex = 10;
+            this.progressBar5.Visible = false;
             // 
             // shelf6
             // 
+            this.shelf6.Enabled = false;
             this.shelf6.Location = new System.Drawing.Point(27, 152);
             this.shelf6.Name = "shelf6";
             this.shelf6.Size = new System.Drawing.Size(100, 100);
             this.shelf6.TabIndex = 9;
             this.shelf6.UseVisualStyleBackColor = true;
+            this.shelf6.Visible = false;
             // 
             // progressBar6
             // 
@@ -324,14 +346,17 @@ namespace ProjektPW
             this.progressBar6.Name = "progressBar6";
             this.progressBar6.Size = new System.Drawing.Size(100, 10);
             this.progressBar6.TabIndex = 10;
+            this.progressBar6.Visible = false;
             // 
             // shelf7
             // 
+            this.shelf7.Enabled = false;
             this.shelf7.Location = new System.Drawing.Point(135, 152);
             this.shelf7.Name = "shelf7";
             this.shelf7.Size = new System.Drawing.Size(100, 100);
             this.shelf7.TabIndex = 9;
             this.shelf7.UseVisualStyleBackColor = true;
+            this.shelf7.Visible = false;
             // 
             // progressBar7
             // 
@@ -339,14 +364,17 @@ namespace ProjektPW
             this.progressBar7.Name = "progressBar7";
             this.progressBar7.Size = new System.Drawing.Size(100, 10);
             this.progressBar7.TabIndex = 10;
+            this.progressBar7.Visible = false;
             // 
             // shelf8
             // 
+            this.shelf8.Enabled = false;
             this.shelf8.Location = new System.Drawing.Point(241, 152);
             this.shelf8.Name = "shelf8";
             this.shelf8.Size = new System.Drawing.Size(100, 100);
             this.shelf8.TabIndex = 9;
             this.shelf8.UseVisualStyleBackColor = true;
+            this.shelf8.Visible = false;
             // 
             // progressBar8
             // 
@@ -354,14 +382,17 @@ namespace ProjektPW
             this.progressBar8.Name = "progressBar8";
             this.progressBar8.Size = new System.Drawing.Size(100, 10);
             this.progressBar8.TabIndex = 10;
+            this.progressBar8.Visible = false;
             // 
             // shelf9
             // 
+            this.shelf9.Enabled = false;
             this.shelf9.Location = new System.Drawing.Point(347, 152);
             this.shelf9.Name = "shelf9";
             this.shelf9.Size = new System.Drawing.Size(100, 100);
             this.shelf9.TabIndex = 9;
             this.shelf9.UseVisualStyleBackColor = true;
+            this.shelf9.Visible = false;
             // 
             // progressBar9
             // 
@@ -369,14 +400,17 @@ namespace ProjektPW
             this.progressBar9.Name = "progressBar9";
             this.progressBar9.Size = new System.Drawing.Size(100, 10);
             this.progressBar9.TabIndex = 10;
+            this.progressBar9.Visible = false;
             // 
             // shelf10
             // 
+            this.shelf10.Enabled = false;
             this.shelf10.Location = new System.Drawing.Point(453, 152);
             this.shelf10.Name = "shelf10";
             this.shelf10.Size = new System.Drawing.Size(100, 100);
             this.shelf10.TabIndex = 9;
             this.shelf10.UseVisualStyleBackColor = true;
+            this.shelf10.Visible = false;
             // 
             // progressBar10
             // 
@@ -384,14 +418,17 @@ namespace ProjektPW
             this.progressBar10.Name = "progressBar10";
             this.progressBar10.Size = new System.Drawing.Size(100, 10);
             this.progressBar10.TabIndex = 10;
+            this.progressBar10.Visible = false;
             // 
             // shelf11
             // 
+            this.shelf11.Enabled = false;
             this.shelf11.Location = new System.Drawing.Point(27, 274);
             this.shelf11.Name = "shelf11";
             this.shelf11.Size = new System.Drawing.Size(100, 100);
             this.shelf11.TabIndex = 9;
             this.shelf11.UseVisualStyleBackColor = true;
+            this.shelf11.Visible = false;
             // 
             // progressBar11
             // 
@@ -399,14 +436,17 @@ namespace ProjektPW
             this.progressBar11.Name = "progressBar11";
             this.progressBar11.Size = new System.Drawing.Size(100, 10);
             this.progressBar11.TabIndex = 10;
+            this.progressBar11.Visible = false;
             // 
             // shelf12
             // 
+            this.shelf12.Enabled = false;
             this.shelf12.Location = new System.Drawing.Point(135, 274);
             this.shelf12.Name = "shelf12";
             this.shelf12.Size = new System.Drawing.Size(100, 100);
             this.shelf12.TabIndex = 9;
             this.shelf12.UseVisualStyleBackColor = true;
+            this.shelf12.Visible = false;
             // 
             // progressBar12
             // 
@@ -414,14 +454,17 @@ namespace ProjektPW
             this.progressBar12.Name = "progressBar12";
             this.progressBar12.Size = new System.Drawing.Size(100, 10);
             this.progressBar12.TabIndex = 10;
+            this.progressBar12.Visible = false;
             // 
             // shelf13
             // 
+            this.shelf13.Enabled = false;
             this.shelf13.Location = new System.Drawing.Point(241, 274);
             this.shelf13.Name = "shelf13";
             this.shelf13.Size = new System.Drawing.Size(100, 100);
             this.shelf13.TabIndex = 9;
             this.shelf13.UseVisualStyleBackColor = true;
+            this.shelf13.Visible = false;
             // 
             // progressBar13
             // 
@@ -429,14 +472,17 @@ namespace ProjektPW
             this.progressBar13.Name = "progressBar13";
             this.progressBar13.Size = new System.Drawing.Size(100, 10);
             this.progressBar13.TabIndex = 10;
+            this.progressBar13.Visible = false;
             // 
             // shelf14
             // 
+            this.shelf14.Enabled = false;
             this.shelf14.Location = new System.Drawing.Point(347, 274);
             this.shelf14.Name = "shelf14";
             this.shelf14.Size = new System.Drawing.Size(100, 100);
             this.shelf14.TabIndex = 9;
             this.shelf14.UseVisualStyleBackColor = true;
+            this.shelf14.Visible = false;
             // 
             // progressBar14
             // 
@@ -444,14 +490,17 @@ namespace ProjektPW
             this.progressBar14.Name = "progressBar14";
             this.progressBar14.Size = new System.Drawing.Size(100, 10);
             this.progressBar14.TabIndex = 10;
+            this.progressBar14.Visible = false;
             // 
             // shelf15
             // 
+            this.shelf15.Enabled = false;
             this.shelf15.Location = new System.Drawing.Point(453, 274);
             this.shelf15.Name = "shelf15";
             this.shelf15.Size = new System.Drawing.Size(100, 100);
             this.shelf15.TabIndex = 9;
             this.shelf15.UseVisualStyleBackColor = true;
+            this.shelf15.Visible = false;
             // 
             // progressBar15
             // 
@@ -459,6 +508,7 @@ namespace ProjektPW
             this.progressBar15.Name = "progressBar15";
             this.progressBar15.Size = new System.Drawing.Size(100, 10);
             this.progressBar15.TabIndex = 10;
+            this.progressBar15.Visible = false;
             // 
             // groupBox2
             // 
@@ -468,10 +518,11 @@ namespace ProjektPW
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Shelves";
+            this.groupBox2.Visible = false;
             // 
             // shelvesInput
             // 
-            this.shelvesInput.Location = new System.Drawing.Point(519, 543);
+            this.shelvesInput.Location = new System.Drawing.Point(507, 531);
             this.shelvesInput.Name = "shelvesInput";
             this.shelvesInput.Size = new System.Drawing.Size(37, 27);
             this.shelvesInput.TabIndex = 12;
@@ -480,7 +531,7 @@ namespace ProjektPW
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(397, 546);
+            this.label3.Location = new System.Drawing.Point(385, 534);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(116, 20);
             this.label3.TabIndex = 13;
@@ -489,7 +540,7 @@ namespace ProjektPW
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 550);
+            this.label4.Location = new System.Drawing.Point(27, 539);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(121, 20);
             this.label4.TabIndex = 14;
@@ -498,7 +549,7 @@ namespace ProjektPW
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 583);
+            this.label5.Location = new System.Drawing.Point(29, 572);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 20);
             this.label5.TabIndex = 15;
@@ -506,7 +557,7 @@ namespace ProjektPW
             // 
             // patientInput
             // 
-            this.patientInput.Location = new System.Drawing.Point(141, 578);
+            this.patientInput.Location = new System.Drawing.Point(154, 567);
             this.patientInput.Name = "patientInput";
             this.patientInput.Size = new System.Drawing.Size(37, 27);
             this.patientInput.TabIndex = 12;
@@ -514,17 +565,18 @@ namespace ProjektPW
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(201, 524);
+            this.button1.Location = new System.Drawing.Point(201, 528);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 124);
+            this.button1.Size = new System.Drawing.Size(171, 99);
             this.button1.TabIndex = 16;
             this.button1.Text = "Set";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 615);
+            this.label6.Location = new System.Drawing.Point(29, 604);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 20);
             this.label6.TabIndex = 17;
@@ -532,7 +584,7 @@ namespace ProjektPW
             // 
             // waitInput
             // 
-            this.waitInput.Location = new System.Drawing.Point(141, 612);
+            this.waitInput.Location = new System.Drawing.Point(154, 601);
             this.waitInput.Name = "waitInput";
             this.waitInput.Size = new System.Drawing.Size(37, 27);
             this.waitInput.TabIndex = 18;
@@ -541,7 +593,7 @@ namespace ProjektPW
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(397, 582);
+            this.label8.Location = new System.Drawing.Point(385, 570);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(118, 20);
             this.label8.TabIndex = 20;
@@ -549,7 +601,7 @@ namespace ProjektPW
             // 
             // amountInput
             // 
-            this.amountInput.Location = new System.Drawing.Point(519, 578);
+            this.amountInput.Location = new System.Drawing.Point(507, 566);
             this.amountInput.Name = "amountInput";
             this.amountInput.Size = new System.Drawing.Size(37, 27);
             this.amountInput.TabIndex = 21;
@@ -557,7 +609,7 @@ namespace ProjektPW
             // 
             // quantityInput
             // 
-            this.quantityInput.Location = new System.Drawing.Point(519, 612);
+            this.quantityInput.Location = new System.Drawing.Point(507, 600);
             this.quantityInput.Name = "quantityInput";
             this.quantityInput.Size = new System.Drawing.Size(37, 27);
             this.quantityInput.TabIndex = 22;
@@ -566,7 +618,7 @@ namespace ProjektPW
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(397, 617);
+            this.label9.Location = new System.Drawing.Point(385, 605);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(121, 20);
             this.label9.TabIndex = 23;
@@ -575,7 +627,7 @@ namespace ProjektPW
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.hurryInput);
-            this.groupBox3.Location = new System.Drawing.Point(12, 523);
+            this.groupBox3.Location = new System.Drawing.Point(25, 512);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(170, 126);
             this.groupBox3.TabIndex = 24;
@@ -592,7 +644,7 @@ namespace ProjektPW
             // 
             // groupBox4
             // 
-            this.groupBox4.Location = new System.Drawing.Point(393, 524);
+            this.groupBox4.Location = new System.Drawing.Point(381, 512);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(172, 125);
             this.groupBox4.TabIndex = 25;
@@ -601,7 +653,6 @@ namespace ProjektPW
             // 
             // clock1
             // 
-            this.clock1.Enabled = true;
             this.clock1.Interval = 1000;
             this.clock1.Tick += new System.EventHandler(this.clock1_Tick);
             // 
@@ -613,6 +664,7 @@ namespace ProjektPW
             this.client1.Size = new System.Drawing.Size(52, 20);
             this.client1.TabIndex = 26;
             this.client1.Text = "Status:";
+            this.client1.Visible = false;
             // 
             // groupBox5
             // 
@@ -623,6 +675,7 @@ namespace ProjektPW
             this.groupBox5.TabIndex = 27;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Client1";
+            this.groupBox5.Visible = false;
             // 
             // sign1
             // 
@@ -645,6 +698,7 @@ namespace ProjektPW
             this.groupBox6.TabIndex = 27;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Client2";
+            this.groupBox6.Visible = false;
             // 
             // sign2
             // 
@@ -664,6 +718,7 @@ namespace ProjektPW
             this.client2.Size = new System.Drawing.Size(52, 20);
             this.client2.TabIndex = 26;
             this.client2.Text = "Status:";
+            this.client2.Visible = false;
             // 
             // groupBox7
             // 
@@ -674,6 +729,7 @@ namespace ProjektPW
             this.groupBox7.TabIndex = 27;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Client3";
+            this.groupBox7.Visible = false;
             // 
             // sign3
             // 
@@ -693,6 +749,7 @@ namespace ProjektPW
             this.client3.Size = new System.Drawing.Size(52, 20);
             this.client3.TabIndex = 26;
             this.client3.Text = "Status:";
+            this.client3.Visible = false;
             // 
             // groupBox8
             // 
@@ -703,6 +760,7 @@ namespace ProjektPW
             this.groupBox8.TabIndex = 27;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Client4";
+            this.groupBox8.Visible = false;
             // 
             // sign4
             // 
@@ -722,6 +780,7 @@ namespace ProjektPW
             this.client4.Size = new System.Drawing.Size(52, 20);
             this.client4.TabIndex = 26;
             this.client4.Text = "Status:";
+            this.client4.Visible = false;
             // 
             // groupBox9
             // 
@@ -732,6 +791,7 @@ namespace ProjektPW
             this.groupBox9.TabIndex = 27;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Client5";
+            this.groupBox9.Visible = false;
             // 
             // sign5
             // 
@@ -751,6 +811,7 @@ namespace ProjektPW
             this.client5.Size = new System.Drawing.Size(52, 20);
             this.client5.TabIndex = 26;
             this.client5.Text = "Status:";
+            this.client5.Visible = false;
             // 
             // groupBox10
             // 
@@ -761,6 +822,7 @@ namespace ProjektPW
             this.groupBox10.TabIndex = 27;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Client6";
+            this.groupBox10.Visible = false;
             // 
             // sign6
             // 
@@ -783,6 +845,7 @@ namespace ProjektPW
             this.groupBox11.TabIndex = 27;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Client7";
+            this.groupBox11.Visible = false;
             // 
             // sign7
             // 
@@ -803,6 +866,7 @@ namespace ProjektPW
             this.groupBox12.TabIndex = 27;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Client8";
+            this.groupBox12.Visible = false;
             // 
             // sign8
             // 
@@ -823,6 +887,7 @@ namespace ProjektPW
             this.groupBox13.TabIndex = 27;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Client9";
+            this.groupBox13.Visible = false;
             // 
             // sign9
             // 
@@ -843,6 +908,7 @@ namespace ProjektPW
             this.groupBox14.TabIndex = 27;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Client10";
+            this.groupBox14.Visible = false;
             // 
             // sign10
             // 
@@ -862,6 +928,7 @@ namespace ProjektPW
             this.client6.Size = new System.Drawing.Size(52, 20);
             this.client6.TabIndex = 26;
             this.client6.Text = "Status:";
+            this.client6.Visible = false;
             // 
             // client7
             // 
@@ -871,6 +938,7 @@ namespace ProjektPW
             this.client7.Size = new System.Drawing.Size(52, 20);
             this.client7.TabIndex = 26;
             this.client7.Text = "Status:";
+            this.client7.Visible = false;
             // 
             // client8
             // 
@@ -880,6 +948,7 @@ namespace ProjektPW
             this.client8.Size = new System.Drawing.Size(52, 20);
             this.client8.TabIndex = 26;
             this.client8.Text = "Status:";
+            this.client8.Visible = false;
             // 
             // client9
             // 
@@ -889,6 +958,7 @@ namespace ProjektPW
             this.client9.Size = new System.Drawing.Size(52, 20);
             this.client9.TabIndex = 26;
             this.client9.Text = "Status:";
+            this.client9.Visible = false;
             // 
             // client10
             // 
@@ -898,6 +968,7 @@ namespace ProjektPW
             this.client10.Size = new System.Drawing.Size(52, 20);
             this.client10.TabIndex = 26;
             this.client10.Text = "Status:";
+            this.client10.Visible = false;
             // 
             // label7
             // 
@@ -908,6 +979,7 @@ namespace ProjektPW
             this.label7.Size = new System.Drawing.Size(166, 31);
             this.label7.TabIndex = 28;
             this.label7.Text = "Patient clients";
+            this.label7.Visible = false;
             // 
             // label10
             // 
@@ -918,6 +990,7 @@ namespace ProjektPW
             this.label10.Size = new System.Drawing.Size(197, 31);
             this.label10.TabIndex = 28;
             this.label10.Text = "Clients in a hurry";
+            this.label10.Visible = false;
             // 
             // label11
             // 
@@ -927,6 +1000,7 @@ namespace ProjektPW
             this.label11.Size = new System.Drawing.Size(147, 20);
             this.label11.TabIndex = 29;
             this.label11.Text = "Clients that resigned:\r\n";
+            this.label11.Visible = false;
             // 
             // label12
             // 
@@ -936,6 +1010,25 @@ namespace ProjektPW
             this.label12.Size = new System.Drawing.Size(104, 20);
             this.label12.TabIndex = 30;
             this.label12.Text = "Sold products:";
+            this.label12.Visible = false;
+            // 
+            // groupBox15
+            // 
+            this.groupBox15.Location = new System.Drawing.Point(16, 478);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(549, 171);
+            this.groupBox15.TabIndex = 31;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "Setup";
+            // 
+            // timeLabel
+            // 
+            this.timeLabel.AutoSize = true;
+            this.timeLabel.Location = new System.Drawing.Point(1038, 534);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(54, 20);
+            this.timeLabel.TabIndex = 32;
+            this.timeLabel.Text = "[00:00]";
             // 
             // setButton
             // 
@@ -943,6 +1036,7 @@ namespace ProjektPW
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -1018,6 +1112,7 @@ namespace ProjektPW
             this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox15);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -1146,6 +1241,8 @@ namespace ProjektPW
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.Label timeLabel;
     }
 }
 
