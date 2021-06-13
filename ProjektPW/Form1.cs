@@ -14,6 +14,8 @@ namespace ProjektPW
     {   // System status
         private bool timer1_status = false;
         private bool pause_status = false;
+        public int resigned_clients = 0;
+        public int sold_products = 0;
         // Clock
         private int clock_minutes = 0;
         private int clock_seconds = 0;
@@ -25,6 +27,9 @@ namespace ProjektPW
         public int shelvesAmount = 0;
         public int productsAmount = 0;
         public int productsQuantity = 0;
+
+        private List<Client> Clients = new List<Client>();
+        private List<Shelf> Shelves = new List<Shelf>();
 
         public setButton()
         {
@@ -57,12 +62,14 @@ namespace ProjektPW
                 pauseButton.Text = "Resume";
                 logBox.Text += clock1_Time() + "Simulation paused.\n";
                 timer1.Enabled = false;
+                clock1.Enabled = false;
             }
             else
             {
                 pauseButton.Text = "Pause";
                 logBox.Text += clock1_Time() + "Simulation resumed.\n";
                 timer1.Enabled = true;
+                clock1.Enabled = true;
             }
             pause_status = !pause_status;
         }
@@ -130,6 +137,18 @@ namespace ProjektPW
             toolTip1.Show("Values: 1-100", quantityInput, 0, -30, 500);
         }
 
+        private string getShelfText(Shelf shelf)
+        {
+            string max = "/"+ Convert.ToString(shelf.max_product) +"\n";
+            string result= "A: " + Convert.ToString(shelf.product1) + max;
+            if (shelf.product2 == -1) return result;
+            result += "B: " + Convert.ToString(shelf.product2) + max;
+            if (shelf.product3 == -1) return result;
+            result += "C: " + Convert.ToString(shelf.product3) + max;
+            if (shelf.product4 == -1) return result;
+            result += "D: " + Convert.ToString(shelf.product4) + max;
+            return result;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             int hurry;
@@ -139,6 +158,13 @@ namespace ProjektPW
             int amount;
             int quantity;
 
+            Button[] shelves_id = new Button[15] { shelf1, shelf2, shelf3, shelf4, shelf5, shelf6, shelf7, shelf8, shelf9, shelf10, shelf11, shelf12, shelf13, shelf14, shelf15 };
+            ProgressBar[] progress_bars = new ProgressBar[15] { progressBar1, progressBar2, progressBar3, progressBar4, progressBar5, progressBar6, progressBar7, progressBar8, progressBar9, progressBar10, progressBar11, progressBar12, progressBar13, progressBar14, progressBar15 };
+
+            GroupBox[] client_labels = new GroupBox[10] {groupBox5, groupBox6,groupBox7,groupBox8,groupBox9,groupBox10,groupBox11,groupBox12,groupBox13,groupBox14};
+            Label[] client_statuses = new Label[10] { client1, client2, client3, client4, client5, client6, client7, client8, client9, client10 };
+            RadioButton[] client_sign = new RadioButton[10] { sign1, sign2, sign3, sign4, sign5, sign6, sign7, sign8, sign9, sign10 };
+            
             if (int.TryParse(hurryInput.Text, out hurry))
             {
                 if (hurry < 0 || hurry > 5)
@@ -267,38 +293,35 @@ namespace ProjektPW
             logBox.Enabled = true;
 
 
-            if (patient > 0) { groupBox5.Visible = true; client1.Visible = true; }
-            if (patient > 1) { groupBox6.Visible = true; client2.Visible = true; }
-            if (patient > 2) { groupBox7.Visible = true; client3.Visible = true; }
-            if (patient > 3) { groupBox8.Visible = true; client4.Visible = true; }
-            if (patient > 4) { groupBox9.Visible = true; client5.Visible = true; }
-            if (hurry > 0)   { groupBox10.Visible = true; client6.Visible = true; }
-            if (hurry > 1)   { groupBox11.Visible = true; client7.Visible = true; }
-            if (hurry > 2)   { groupBox12.Visible = true; client8.Visible = true; }
-            if (hurry > 3)   { groupBox13.Visible = true; client9.Visible = true; }
-            if (hurry > 4)   { groupBox14.Visible = true; client10.Visible = true; }
+            for(int i = 0; i < patient; i++)
+            {
+                client_labels[i].Visible = true;
+                client_statuses[i].Visible = true;
+                Clients.Add(new Client(i, client_statuses[i],client_sign[i]));
+            }
 
-            if (shelves > 0) { shelf1.Visible = true; progressBar1.Visible = true; }
-            if (shelves > 1) { shelf2.Visible = true; progressBar2.Visible = true; }
-            if (shelves > 2) { shelf3.Visible = true; progressBar3.Visible = true; }
-            if (shelves > 3) { shelf4.Visible = true; progressBar4.Visible = true; }
-            if (shelves > 4) { shelf5.Visible = true; progressBar5.Visible = true; }
-            if (shelves > 5) { shelf6.Visible = true; progressBar6.Visible = true; }
-            if (shelves > 6) { shelf7.Visible = true; progressBar7.Visible = true; }
-            if (shelves > 7) { shelf8.Visible = true; progressBar8.Visible = true; }
-            if (shelves > 8) { shelf9.Visible = true; progressBar9.Visible = true; }
-            if (shelves > 9) { shelf10.Visible = true; progressBar10.Visible = true; }
-            if (shelves > 10) { shelf11.Visible = true; progressBar11.Visible = true; }
-            if (shelves > 11) { shelf12.Visible = true; progressBar12.Visible = true; }
-            if (shelves > 12) { shelf13.Visible = true; progressBar13.Visible = true; }
-            if (shelves > 13) { shelf14.Visible = true; progressBar14.Visible = true; }
-            if (shelves > 14) { shelf15.Visible = true; progressBar15.Visible = true; }
+            for(int i = 0; i < hurry; i++)
+            {
+                client_labels[i+5].Visible = true;
+                client_statuses[i+5].Visible = true;
+                Clients.Add(new Client(i+5, client_statuses[i+5], client_sign[i+5]));
+            }
 
             label12.Visible = true;
             label11.Visible = true;
             label10.Visible = true;
             label7.Visible = true;
             groupBox2.Visible = true;
+            groupBox16.Visible = true;
+
+            for(int i = 0; i < shelves; i++)
+            {
+                shelves_id[i].Visible = true;
+                progress_bars[i].Visible = true;
+                Shelves.Add(new Shelf(i,amount,quantity,shelves_id[i],progress_bars[i]));
+                Shelves[i].square.Text = getShelfText(Shelves[i]);
+                Shelves[i].bar.Value = 100;
+            }
         }
     }
 }
