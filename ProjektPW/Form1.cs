@@ -24,12 +24,12 @@ namespace ProjektPW
         public int patientClients = 0;
         public int waitingTime = 0;
         // Shelves
-        public int shelvesAmount = 0;
-        public int productsAmount = 0;
+        public static int shelvesAmount = 0;
+        public static int productsAmount = 0;
         public int productsQuantity = 0;
 
-        private List<Client> Clients = new List<Client>();
-        private List<Shelf> Shelves = new List<Shelf>();
+        List<Client> Clients = new List<Client>();
+        List<Shelf> Shelves = new List<Shelf>();
 
         public setButton()
         {
@@ -96,7 +96,7 @@ namespace ProjektPW
             }
             timeLabel.Text = clock1_Time().Trim(':', ' ');
         }
-        private string clock1_Time()
+        public string clock1_Time()
         {
             string result = "[";
             if (clock_minutes < 10)
@@ -292,19 +292,29 @@ namespace ProjektPW
             restartButton.Enabled = true;
             logBox.Enabled = true;
 
+            for (int i = 0; i < shelves; i++)
+            {
+                shelves_id[i].Visible = true;
+                progress_bars[i].Visible = true;
+                Shelves.Add(new Shelf(i, amount, quantity, shelves_id[i], progress_bars[i]));
+                Shelves[i].square.Text = getShelfText(Shelves[i]);
+                Shelves[i].bar.Value = 100;
+            }
 
-            for(int i = 0; i < patient; i++)
+            for (int i = 0; i < patient; i++)
             {
                 client_labels[i].Visible = true;
                 client_statuses[i].Visible = true;
-                Clients.Add(new Client(i, client_statuses[i],client_sign[i]));
+                Clients.Add(new Client(i, client_statuses[i],client_sign[i],this,Shelves));
+                Clients[i].MainLoop();
             }
 
             for(int i = 0; i < hurry; i++)
             {
                 client_labels[i+5].Visible = true;
                 client_statuses[i+5].Visible = true;
-                Clients.Add(new Client(i+5, client_statuses[i+5], client_sign[i+5]));
+                Clients.Add(new Client(i+5, client_statuses[i+5], client_sign[i+5],this,Shelves));
+                Clients[i+patient].MainLoop();
             }
 
             label12.Visible = true;
@@ -314,14 +324,7 @@ namespace ProjektPW
             groupBox2.Visible = true;
             groupBox16.Visible = true;
 
-            for(int i = 0; i < shelves; i++)
-            {
-                shelves_id[i].Visible = true;
-                progress_bars[i].Visible = true;
-                Shelves.Add(new Shelf(i,amount,quantity,shelves_id[i],progress_bars[i]));
-                Shelves[i].square.Text = getShelfText(Shelves[i]);
-                Shelves[i].bar.Value = 100;
-            }
+
         }
     }
 }

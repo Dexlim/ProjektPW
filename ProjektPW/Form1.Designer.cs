@@ -529,7 +529,7 @@ namespace ProjektPW
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 539);
+            this.label4.Location = new System.Drawing.Point(3, 57);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(121, 20);
             this.label4.TabIndex = 46;
@@ -538,7 +538,7 @@ namespace ProjektPW
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(29, 572);
+            this.label5.Location = new System.Drawing.Point(6, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 20);
             this.label5.TabIndex = 47;
@@ -546,10 +546,10 @@ namespace ProjektPW
             // 
             // patientInput
             // 
-            this.patientInput.Location = new System.Drawing.Point(154, 567);
+            this.patientInput.Location = new System.Drawing.Point(129, 19);
             this.patientInput.Name = "patientInput";
             this.patientInput.Size = new System.Drawing.Size(37, 27);
-            this.patientInput.TabIndex = 1;
+            this.patientInput.TabIndex = 0;
             this.patientInput.Click += new System.EventHandler(this.patientInput_Click);
             // 
             // button1
@@ -616,6 +616,9 @@ namespace ProjektPW
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.hurryInput);
+            this.groupBox3.Controls.Add(this.patientInput);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Location = new System.Drawing.Point(25, 512);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(170, 126);
@@ -625,10 +628,10 @@ namespace ProjektPW
             // 
             // hurryInput
             // 
-            this.hurryInput.Location = new System.Drawing.Point(130, 20);
+            this.hurryInput.Location = new System.Drawing.Point(130, 53);
             this.hurryInput.Name = "hurryInput";
             this.hurryInput.Size = new System.Drawing.Size(36, 27);
-            this.hurryInput.TabIndex = 0;
+            this.hurryInput.TabIndex = 1;
             this.hurryInput.Click += new System.EventHandler(this.hurryInput_Click);
             // 
             // groupBox4
@@ -1080,10 +1083,7 @@ namespace ProjektPW
             this.Controls.Add(this.waitInput);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.patientInput);
             this.Controls.Add(this.shelvesInput);
             this.Controls.Add(this.progressBar15);
             this.Controls.Add(this.progressBar14);
@@ -1181,7 +1181,7 @@ namespace ProjektPW
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Button pauseButton;
         private System.Windows.Forms.Button restartButton;
-        private System.Windows.Forms.RichTextBox logBox;
+        public System.Windows.Forms.RichTextBox logBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button shelf1;
         private System.Windows.Forms.ProgressBar progressBar1;

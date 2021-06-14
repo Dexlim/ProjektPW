@@ -33,5 +33,35 @@ namespace ProjektPW
             this.bar = bar;
             this.max_product = product_quantity;
         }
+
+        public void Update()
+        {
+            string max = "/" + Convert.ToString(max_product) + "\n";
+            string result = "A: " + Convert.ToString(product1) + max;
+
+            if (product2 == -1)
+            {
+                square.Text = result;
+                bar.Value = (int)(((float)product1 / (float)max_product) * 100);
+                return;
+            }
+            result += "B: " + Convert.ToString(product2) + max;
+            if (product3 == -1)
+            {
+                square.Text = result;
+                bar.Value = (int)(((float)Math.Min(product1,product2) / (float)max_product) * 100);
+                return;
+            }
+            result += "C: " + Convert.ToString(product3) + max;
+            if (product4 == -1) 
+            {
+                square.Text = result;
+                bar.Value = (int)((float)(Math.Min(Math.Min(product1, product2),product3) / (float)max_product) * 100);
+                return;
+            }
+            result += "D: " + Convert.ToString(product4) + max;
+            square.Text = result;
+            bar.Value = (int)(((float)Math.Min(Math.Min(Math.Min(product1, product2), product3),product4) / (float)max_product) * 100);
+        }
     }
 }
