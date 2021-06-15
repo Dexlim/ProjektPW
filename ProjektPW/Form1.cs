@@ -296,7 +296,7 @@ namespace ProjektPW
             {
                 shelves_id[i].Visible = true;
                 progress_bars[i].Visible = true;
-                Shelves.Add(new Shelf(i, amount, quantity, shelves_id[i], progress_bars[i]));
+                Shelves.Add(new Shelf(i, amount, quantity, shelves_id[i], progress_bars[i],this));
                 Shelves[i].square.Text = getShelfText(Shelves[i]);
                 Shelves[i].bar.Value = 100;
             }

@@ -60,17 +60,45 @@ namespace ProjektPW
         private void Consume(int shelfID,int productID)
         {
             status.Text = "Status: Buying " + Convert.ToChar(productID + 65) + " from shelf" + Convert.ToString(shelfID);
+            // SLEEP
             mainForm.logBox.Text += mainForm.clock1_Time() + "Client" + Convert.ToString(this.id) + " bought product " + Convert.ToChar(productID+65) + " from shelf" + Convert.ToString(shelfID+1) + "\n";
             if (productID == 0)
+            { 
                 Shelves[shelfID].product1--;
+                if (Shelves[shelfID].product1 == 0)
+                {
+                    mainForm.logBox.Text += mainForm.clock1_Time() + "Client" + Convert.ToString(this.id) + " finished product " + Convert.ToChar(productID + 65) + " on shelf" + Convert.ToString(shelfID + 1) + "\n";
+                    Shelves[shelfID].Stock(1); return;
+                }
+            }
             if (productID == 1)
+            {
                 Shelves[shelfID].product2--;
+                if (Shelves[shelfID].product2 == 0)
+                {
+                    mainForm.logBox.Text += mainForm.clock1_Time() + "Client" + Convert.ToString(this.id) + " finished product " + Convert.ToChar(productID + 65) + " on shelf" + Convert.ToString(shelfID + 1) + "\n";
+                    Shelves[shelfID].Stock(2); return;
+                }
+            }
             if (productID == 2)
+            {
                 Shelves[shelfID].product3--;
+                if (Shelves[shelfID].product3 == 0)
+                {
+                    mainForm.logBox.Text += mainForm.clock1_Time() + "Client" + Convert.ToString(this.id) + " finished product " + Convert.ToChar(productID + 65) + " on shelf" + Convert.ToString(shelfID + 1) + "\n";
+                    Shelves[shelfID].Stock(3); return;
+                }
+            }
             if (productID == 3)
+            {
                 Shelves[shelfID].product4--;
-            Shelves[shelfID].Update();
-            
+                if (Shelves[shelfID].product4 == 0)
+                {
+                    mainForm.logBox.Text += mainForm.clock1_Time() + "Client" + Convert.ToString(this.id) + " finished product " + Convert.ToChar(productID + 65) + " on shelf" + Convert.ToString(shelfID + 1) + "\n";
+                    Shelves[shelfID].Stock(4); return; 
+                }
+            }
+            Shelves[shelfID].Update();           
         }
     }
 }

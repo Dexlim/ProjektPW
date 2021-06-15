@@ -1268,8 +1268,8 @@ namespace ProjektPW
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.GroupBox groupBox16;
-        private System.Windows.Forms.RadioButton sign11;
-        private System.Windows.Forms.Label storekeeper;
+        public System.Windows.Forms.RadioButton sign11;
+        public  System.Windows.Forms.Label storekeeper;
     }
 }
 
