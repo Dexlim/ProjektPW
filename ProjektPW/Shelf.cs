@@ -71,53 +71,74 @@ namespace ProjektPW
             if(product==1)
             {
                 //Semafor
-                this.mainForm.storekeeper.Text = "Status: Putting product A on shelf" + Convert.ToString(id+1);
-                this.mainForm.sign11.Checked = true;
-                //Sleep
+                mainForm.Invoke(new Action(delegate ()
+                {
+                    mainForm.storekeeper.Text = "Status: Putting product A on shelf" + Convert.ToString(id + 1);
+                    mainForm.sign11.Checked = true;
+                    Thread.Sleep(1000);
+                }));
+
                 this.product1 = max_product;
-                mainForm.logBox.Text += mainForm.clock1_Time() + "Storekeeper restocked product A on shelf" + Convert.ToString(id + 1) + "\n";
-                this.mainForm.storekeeper.Text = "Status: ";
-                this.mainForm.sign11.Checked = false;
-                this.Update();
+                mainForm.Invoke(new Action(delegate ()
+                {
+                    mainForm.logBox.Text += mainForm.clock1_Time() + "Storekeeper restocked product A on shelf" + Convert.ToString(id + 1) + "\n";
+                    mainForm.sign11.Checked = false;
+                    this.Update();
+                }));
                 //Semafor
             }
             else if(product==2)
             {
                 //Semafor
-                this.mainForm.storekeeper.Text = "Status: Putting product B on shelf" + Convert.ToString(id + 1);
-                this.mainForm.sign11.Checked = true;
-                //Sleep
+                mainForm.Invoke(new Action(delegate ()
+                {
+                    mainForm.storekeeper.Text = "Status: Putting product B on shelf" + Convert.ToString(id + 1);
+                    mainForm.sign11.Checked = true;
+                }));
+                Thread.Sleep(1000);
                 this.product2 = max_product;
-                mainForm.logBox.Text += mainForm.clock1_Time() + "Storekeeper restocked product B on shelf" + Convert.ToString(id + 1) + "\n";
-                this.mainForm.storekeeper.Text = "Status: ";
-                this.mainForm.sign11.Checked = false;
-                this.Update();
+                mainForm.Invoke(new Action(delegate ()
+                {
+                    mainForm.logBox.Text += mainForm.clock1_Time() + "Storekeeper restocked product B on shelf" + Convert.ToString(id + 1) + "\n";
+                    mainForm.sign11.Checked = false;
+                    this.Update();
+                }));
                 //Semafor
             }
             else if(product==3)
             {
                 //Semafor
-                this.mainForm.storekeeper.Text = "Status: Putting product C on shelf" + Convert.ToString(id + 1);
-                this.mainForm.sign11.Checked = true;
-                //Sleep
+                mainForm.Invoke(new Action(delegate ()
+                {
+                    mainForm.storekeeper.Text = "Status: Putting product C on shelf" + Convert.ToString(id + 1);
+                    mainForm.sign11.Checked = true;
+                }));
+                Thread.Sleep(1000);
                 this.product3 = max_product;
-                mainForm.logBox.Text += mainForm.clock1_Time() + "Storekeeper restocked product C on shelf" + Convert.ToString(id + 1) + "\n";
-                this.mainForm.storekeeper.Text = "Status: ";
-                this.mainForm.sign11.Checked = false;
-                this.Update();
+                mainForm.Invoke(new Action(delegate ()
+                {
+                    mainForm.logBox.Text += mainForm.clock1_Time() + "Storekeeper restocked product C on shelf" + Convert.ToString(id + 1) + "\n";
+                    mainForm.sign11.Checked = false;
+                    this.Update();
+                }));
                 //Semafor
             }
             else if(product==4)
             {
                 //Semafor
-                this.mainForm.storekeeper.Text = "Status: Putting product D on shelf" + Convert.ToString(id + 1);
-                this.mainForm.sign11.Checked = true;
-                //Sleep
+                mainForm.Invoke(new Action(delegate ()
+                {
+                    mainForm.storekeeper.Text = "Status: Putting product D on shelf" + Convert.ToString(id + 1);
+                    mainForm.sign11.Checked = true;
+                }));
+                Thread.Sleep(1000);
                 this.product4 = max_product;
-                mainForm.logBox.Text += mainForm.clock1_Time() + "Storekeeper restocked product D on shelf" + Convert.ToString(id + 1) + "\n";
-                this.mainForm.storekeeper.Text = "Status: ";
-                this.mainForm.sign11.Checked = false;
-                this.Update();
+                mainForm.Invoke(new Action(delegate ()
+                {
+                    mainForm.logBox.Text += mainForm.clock1_Time() + "Storekeeper restocked product D on shelf" + Convert.ToString(id + 1) + "\n";
+                    mainForm.sign11.Checked = false;
+                    this.Update();
+                }));
                 //Semafor
             }
         }

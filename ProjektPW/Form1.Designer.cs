@@ -229,10 +229,11 @@ namespace ProjektPW
             this.logBox.Location = new System.Drawing.Point(882, 12);
             this.logBox.Name = "logBox";
             this.logBox.ReadOnly = true;
-            this.logBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.logBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.logBox.Size = new System.Drawing.Size(368, 522);
             this.logBox.TabIndex = 12;
             this.logBox.Text = "";
+            this.logBox.TextChanged += new System.EventHandler(this.logBox_TextChanged);
             // 
             // label2
             // 
@@ -1140,6 +1141,7 @@ namespace ProjektPW
             this.MaximizeBox = false;
             this.Name = "setButton";
             this.Text = "ProjektPW Zadanie 7";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.setButton_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

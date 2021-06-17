@@ -18,6 +18,8 @@ namespace ProjektPW
         public setButton mainForm;
         private List<Shelf> Shelves;
 
+        public Thread thread;
+
     public Client(int id, Label status, RadioButton sign, setButton form, List<Shelf> Shelves)
         {
             this.id = id;
@@ -27,6 +29,8 @@ namespace ProjektPW
             this.sign = sign;
             this.mainForm = form;
             this.Shelves = Shelves;
+            this.thread = new Thread(MainLoop);
+            thread.Start();
         }
         public Client(int id, int waiting_time, Label status, RadioButton sign, setButton form,List<Shelf> Shelves)
         {
@@ -37,30 +41,48 @@ namespace ProjektPW
             this.sign = sign;
             this.mainForm = form;
             this.Shelves = Shelves;
+            this.thread = new Thread(MainLoop);
+            thread.Start();
         }
 
         public void MainLoop()
         {
-            //while(true)
-            //{
+            while(!mainForm.form_closed)
+            {
                 Random rnd = new Random();
                 int random_shelf = rnd.Next(0, setButton.shelvesAmount);
                 int random_product = rnd.Next(0, setButton.productsAmount);
-
+                if (mainForm.form_closed) return;
+                mainForm.Invoke(new Action(delegate ()
+                {
                 status.Text = "Status: waiting for shelf" + Convert.ToString(random_shelf);
-                sign.Checked = true;
+                }));
+                if (isPatient)
+                {
+
+                }
                 // Semafory tutaj
                      Consume(random_shelf, random_product);
                 // Semafory tutaj
-                sign.Checked = false;
-                status.Text = "Status: ";
-            //}
+                if (mainForm.form_closed) return;
+                mainForm.Invoke(new Action(delegate ()
+                {
+                    sign.Checked = false;
+                }));
+            }
         }
 
         private void Consume(int shelfID,int productID)
         {
-            status.Text = "Status: Buying " + Convert.ToChar(productID + 65) + " from shelf" + Convert.ToString(shelfID);
-            // SLEEP
+            mainForm.Invoke(new Action(delegate ()
+            {
+                status.Text = "Status: Buying " + Convert.ToChar(productID + 65) + " from shelf" + Convert.ToString(shelfID);
+                sign.Checked = true;
+            }));
+            Thread.Sleep(1000);
+            if (mainForm.form_closed) return;
+            mainForm.Invoke(new Action(delegate ()
+            {
             mainForm.logBox.Text += mainForm.clock1_Time() + "Client" + Convert.ToString(this.id) + " bought product " + Convert.ToChar(productID+65) + " from shelf" + Convert.ToString(shelfID+1) + "\n";
             if (productID == 0)
             { 
@@ -68,7 +90,9 @@ namespace ProjektPW
                 if (Shelves[shelfID].product1 == 0)
                 {
                     mainForm.logBox.Text += mainForm.clock1_Time() + "Client" + Convert.ToString(this.id) + " finished product " + Convert.ToChar(productID + 65) + " on shelf" + Convert.ToString(shelfID + 1) + "\n";
-                    Shelves[shelfID].Stock(1); return;
+                    Shelves[shelfID].Stock(1);
+                    mainForm.storekeeper.Text = "Status: "; 
+                    return;
                 }
             }
             if (productID == 1)
@@ -77,7 +101,9 @@ namespace ProjektPW
                 if (Shelves[shelfID].product2 == 0)
                 {
                     mainForm.logBox.Text += mainForm.clock1_Time() + "Client" + Convert.ToString(this.id) + " finished product " + Convert.ToChar(productID + 65) + " on shelf" + Convert.ToString(shelfID + 1) + "\n";
-                    Shelves[shelfID].Stock(2); return;
+                    Shelves[shelfID].Stock(2);
+                    mainForm.storekeeper.Text = "Status: ";
+                        return;
                 }
             }
             if (productID == 2)
@@ -86,7 +112,9 @@ namespace ProjektPW
                 if (Shelves[shelfID].product3 == 0)
                 {
                     mainForm.logBox.Text += mainForm.clock1_Time() + "Client" + Convert.ToString(this.id) + " finished product " + Convert.ToChar(productID + 65) + " on shelf" + Convert.ToString(shelfID + 1) + "\n";
-                    Shelves[shelfID].Stock(3); return;
+                    Shelves[shelfID].Stock(3);
+                    mainForm.storekeeper.Text = "Status: ";
+                    return;
                 }
             }
             if (productID == 3)
@@ -95,10 +123,13 @@ namespace ProjektPW
                 if (Shelves[shelfID].product4 == 0)
                 {
                     mainForm.logBox.Text += mainForm.clock1_Time() + "Client" + Convert.ToString(this.id) + " finished product " + Convert.ToChar(productID + 65) + " on shelf" + Convert.ToString(shelfID + 1) + "\n";
-                    Shelves[shelfID].Stock(4); return; 
+                    Shelves[shelfID].Stock(4);
+                    mainForm.storekeeper.Text = "Status: ";
+                    return; 
                 }
             }
-            Shelves[shelfID].Update();           
+            Shelves[shelfID].Update();
+            }));
         }
     }
 }

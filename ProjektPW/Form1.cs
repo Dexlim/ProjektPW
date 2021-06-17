@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace ProjektPW
 {
@@ -28,9 +29,10 @@ namespace ProjektPW
         public static int productsAmount = 0;
         public int productsQuantity = 0;
 
+        public bool form_closed = false;
+
         List<Client> Clients = new List<Client>();
         List<Shelf> Shelves = new List<Shelf>();
-
         public setButton()
         {
             InitializeComponent();
@@ -83,7 +85,10 @@ namespace ProjektPW
 
             result = MessageBox.Show(message, caption, buttons);
             if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                form_closed = true;
                 Application.Restart();
+            }   
         }
 
         private void clock1_Tick(object sender, EventArgs e)
@@ -291,6 +296,12 @@ namespace ProjektPW
             pauseButton.Enabled = true;
             restartButton.Enabled = true;
             logBox.Enabled = true;
+            label12.Visible = true;
+            label11.Visible = true;
+            label10.Visible = true;
+            label7.Visible = true;
+            groupBox2.Visible = true;
+            groupBox16.Visible = true;
 
             for (int i = 0; i < shelves; i++)
             {
@@ -306,7 +317,6 @@ namespace ProjektPW
                 client_labels[i].Visible = true;
                 client_statuses[i].Visible = true;
                 Clients.Add(new Client(i, client_statuses[i],client_sign[i],this,Shelves));
-                Clients[i].MainLoop();
             }
 
             for(int i = 0; i < hurry; i++)
@@ -314,17 +324,17 @@ namespace ProjektPW
                 client_labels[i+5].Visible = true;
                 client_statuses[i+5].Visible = true;
                 Clients.Add(new Client(i+5, client_statuses[i+5], client_sign[i+5],this,Shelves));
-                Clients[i+patient].MainLoop();
             }
+        }
+        private void logBox_TextChanged(object sender, EventArgs e)
+        {
+            logBox.SelectionStart = logBox.Text.Length;
+            logBox.ScrollToCaret();
+        }
 
-            label12.Visible = true;
-            label11.Visible = true;
-            label10.Visible = true;
-            label7.Visible = true;
-            groupBox2.Visible = true;
-            groupBox16.Visible = true;
-
-
+        private void setButton_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            form_closed = true;
         }
     }
 }
