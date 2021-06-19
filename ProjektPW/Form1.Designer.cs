@@ -120,7 +120,7 @@ namespace ProjektPW
             this.client10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.resign_label = new System.Windows.Forms.Label();
             this.sold_label = new System.Windows.Forms.Label();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.timeLabel = new System.Windows.Forms.Label();
@@ -985,15 +985,15 @@ namespace ProjektPW
             this.label10.Text = "Clients in a hurry";
             this.label10.Visible = false;
             // 
-            // label11
+            // resign_label
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(16, 425);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(147, 20);
-            this.label11.TabIndex = 86;
-            this.label11.Text = "Clients that resigned:\r\n";
-            this.label11.Visible = false;
+            this.resign_label.AutoSize = true;
+            this.resign_label.Location = new System.Drawing.Point(16, 425);
+            this.resign_label.Name = "resign_label";
+            this.resign_label.Size = new System.Drawing.Size(147, 20);
+            this.resign_label.TabIndex = 86;
+            this.resign_label.Text = "Clients that resigned:\r\n";
+            this.resign_label.Visible = false;
             // 
             // sold_label
             // 
@@ -1064,7 +1064,7 @@ namespace ProjektPW
             this.Controls.Add(this.groupBox16);
             this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.sold_label);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.resign_label);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.client10);
@@ -1177,7 +1177,7 @@ namespace ProjektPW
         #endregion
 
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.TrackBar trackBar1;
+        public System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton1;
@@ -1265,7 +1265,7 @@ namespace ProjektPW
         private System.Windows.Forms.Label client10;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        public System.Windows.Forms.Label resign_label;
         public System.Windows.Forms.Label sold_label;
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.Label timeLabel;

@@ -17,6 +17,7 @@ namespace ProjektPW
         public RadioButton sign;
         public setButton mainForm;
         private List<Shelf> Shelves;
+        public int buying_time;
 
         public int isPaused;
         public Thread thread;
@@ -32,6 +33,7 @@ namespace ProjektPW
             this.mainForm = form;
             this.Shelves = Shelves;
             this.isPaused = -1;
+            this.buying_time = mainForm.trackBar1.Value;
             this.thread = new Thread(MainLoop);
             thread.IsBackground = true;
             thread.Start();
@@ -46,6 +48,7 @@ namespace ProjektPW
             this.mainForm = form;
             this.Shelves = Shelves;
             this.isPaused = -1;
+            this.buying_time = mainForm.trackBar1.Value;
             this.thread = new Thread(MainLoop);
             thread.IsBackground = true;
             thread.Start();
@@ -68,11 +71,24 @@ namespace ProjektPW
                 {
                 status.Text = "Status: Waiting for shelf" + Convert.ToString(random_shelf);
                 }));
-                Shelves[random_shelf].semaphore.Wait();
-                    if (!isPatient)
+                if (this.isPatient==false)
+                {
+                    if(Shelves[random_shelf].semaphore.Wait(buying_time*waiting_time)==false)
                     {
-
+                        if (mainForm.form_closed) return;
+                        mainForm.Invoke(new Action(delegate ()
+                        {
+                            mainForm.resigned_clients++;
+                            mainForm.resign_label.Text = "Clients that resigned: " + Convert.ToString(mainForm.resigned_clients);
+                            mainForm.logBox.Text += mainForm.clock1_Time() + "Client" + Convert.ToString(id) + " resigned from waiting on shelf" + Convert.ToString(random_shelf) + "\n";
+                        }));
+                        continue;
                     }
+                }
+                else
+                {
+                    Shelves[random_shelf].semaphore.Wait();
+                }
                     Consume(random_shelf, random_product);
                 if (mainForm.form_closed) return;
                 mainForm.Invoke(new Action(delegate ()
@@ -90,7 +106,7 @@ namespace ProjektPW
                 status.Text = "Status: Buying " + Convert.ToChar(productID + 65) + " from shelf" + Convert.ToString(shelfID);
                 sign.Checked = true;
             }));
-            Thread.Sleep(1000);
+            Thread.Sleep(buying_time);
             if (mainForm.form_closed) return;
             mainForm.Invoke(new Action(delegate ()
             {
@@ -189,7 +205,7 @@ namespace ProjektPW
                     mainForm.storekeeper.Text = "Status: Putting product A on shelf" + Convert.ToString(shelf_id + 1);
                     mainForm.sign11.Checked = true;
                 }));
-                Thread.Sleep(1000);
+                Thread.Sleep(2*buying_time);
                 Shelves[shelf_id].product1 = Shelves[shelf_id].max_product;
                 mainForm.Invoke(new Action(delegate ()
                 {
@@ -206,7 +222,7 @@ namespace ProjektPW
                     mainForm.storekeeper.Text = "Status: Putting product B on shelf" + Convert.ToString(shelf_id + 1);
                     mainForm.sign11.Checked = true;
                 }));
-                Thread.Sleep(1000);
+                Thread.Sleep(2*buying_time);
                 Shelves[shelf_id].product2 = Shelves[shelf_id].max_product;
                 mainForm.Invoke(new Action(delegate ()
                 {
@@ -223,7 +239,7 @@ namespace ProjektPW
                     mainForm.storekeeper.Text = "Status: Putting product C on shelf" + Convert.ToString(shelf_id + 1);
                     mainForm.sign11.Checked = true;
                 }));
-                Thread.Sleep(1000);
+                Thread.Sleep(2*buying_time);
                 Shelves[shelf_id].product3 = Shelves[shelf_id].max_product;
                 mainForm.Invoke(new Action(delegate ()
                 {
@@ -240,7 +256,7 @@ namespace ProjektPW
                     mainForm.storekeeper.Text = "Status: Putting product D on shelf" + Convert.ToString(shelf_id + 1);
                     mainForm.sign11.Checked = true;
                 }));
-                Thread.Sleep(1000);
+                Thread.Sleep(2*buying_time);
                 Shelves[shelf_id].product4 = Shelves[shelf_id].max_product;
                 mainForm.Invoke(new Action(delegate ()
                 {

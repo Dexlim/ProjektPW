@@ -58,6 +58,10 @@ namespace ProjektPW
         private void trackBar1_MouseUp(object sender, EventArgs e)
         {
             logBox.Text += clock1_Time() + "Changed timer delay to: " + label1.Text + "\n";
+            foreach(Client client in Clients)
+            {
+                client.buying_time = trackBar1.Value;
+            }
         }
 
         private void pauseButton_Click(object sender, EventArgs e)
@@ -315,7 +319,7 @@ namespace ProjektPW
             restartButton.Enabled = true;
             logBox.Enabled = true;
             sold_label.Visible = true;
-            label11.Visible = true;
+            resign_label.Visible = true;
             label10.Visible = true;
             label7.Visible = true;
             groupBox2.Visible = true;
@@ -341,7 +345,7 @@ namespace ProjektPW
             {
                 client_labels[i+5].Visible = true;
                 client_statuses[i+5].Visible = true;
-                Clients.Add(new Client(i+5, client_statuses[i+5], client_sign[i+5],this,Shelves));
+                Clients.Add(new Client(i+5, waitingTime, client_statuses[i+5], client_sign[i+5],this,Shelves));
             }
         }
         private void logBox_TextChanged(object sender, EventArgs e)
