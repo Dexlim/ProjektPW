@@ -16,7 +16,7 @@ namespace ProjektPW
         private bool timer1_status = false;
         private bool pause_status = false;
         public int resigned_clients = 0;
-        public int sold_products = 0;
+        public long sold_products = 0;
         // Clock
         private int clock_minutes = 0;
         private int clock_seconds = 0;
@@ -33,6 +33,9 @@ namespace ProjektPW
 
         List<Client> Clients = new List<Client>();
         List<Shelf> Shelves = new List<Shelf>();
+
+        public SemaphoreSlim storekeeper_semaphore = new SemaphoreSlim(1, 1);
+
         public setButton()
         {
             InitializeComponent();
@@ -61,10 +64,20 @@ namespace ProjektPW
         {
             if (pause_status == false)
             {
-                pauseButton.Text = "Resume";
-                logBox.Text += clock1_Time() + "Simulation paused.\n";
-                timer1.Enabled = false;
-                clock1.Enabled = false;
+                Invoke(new Action(delegate ()
+                {
+                    pauseButton.Text = "Resume";
+                    logBox.Text += clock1_Time() + "Pausing, waiting for clients...\n";
+                    timer1.Enabled = false;
+                    clock1.Enabled = false;
+                }));
+                foreach(Client client in Clients)
+                {
+                    client.isPaused = 1;
+                }
+
+                Thread pauseThread = new Thread(pause_ThreadFunction);
+                pauseThread.Start();
             }
             else
             {
@@ -72,6 +85,11 @@ namespace ProjektPW
                 logBox.Text += clock1_Time() + "Simulation resumed.\n";
                 timer1.Enabled = true;
                 clock1.Enabled = true;
+                foreach (Client client in Clients)
+                {
+                    client.isPaused = 0;
+                    client.pauseSemaphore.Release();
+                }
             }
             pause_status = !pause_status;
         }
@@ -296,7 +314,7 @@ namespace ProjektPW
             pauseButton.Enabled = true;
             restartButton.Enabled = true;
             logBox.Enabled = true;
-            label12.Visible = true;
+            sold_label.Visible = true;
             label11.Visible = true;
             label10.Visible = true;
             label7.Visible = true;
@@ -335,6 +353,24 @@ namespace ProjektPW
         private void setButton_FormClosed(object sender, FormClosedEventArgs e)
         {
             form_closed = true;
+        }
+
+        private void pause_ThreadFunction()
+        {
+            bool finished = false;
+            while (finished == false)
+            {
+                finished = true;
+                foreach (Client client in Clients)
+                {
+                    if (client.isPaused != 2)
+                        finished = false;
+                }
+            }
+            Invoke(new Action(delegate ()
+            {
+                logBox.Text += clock1_Time() + "Simulation paused.\n";
+            }));
         }
     }
 }

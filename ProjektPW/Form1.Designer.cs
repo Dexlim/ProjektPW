@@ -121,7 +121,7 @@ namespace ProjektPW
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.sold_label = new System.Windows.Forms.Label();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.timeLabel = new System.Windows.Forms.Label();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
@@ -995,15 +995,15 @@ namespace ProjektPW
             this.label11.Text = "Clients that resigned:\r\n";
             this.label11.Visible = false;
             // 
-            // label12
+            // sold_label
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(16, 453);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(104, 20);
-            this.label12.TabIndex = 87;
-            this.label12.Text = "Sold products:";
-            this.label12.Visible = false;
+            this.sold_label.AutoSize = true;
+            this.sold_label.Location = new System.Drawing.Point(16, 453);
+            this.sold_label.Name = "sold_label";
+            this.sold_label.Size = new System.Drawing.Size(104, 20);
+            this.sold_label.TabIndex = 87;
+            this.sold_label.Text = "Sold products:";
+            this.sold_label.Visible = false;
             // 
             // groupBox15
             // 
@@ -1063,7 +1063,7 @@ namespace ProjektPW
             this.ClientSize = new System.Drawing.Size(1262, 673);
             this.Controls.Add(this.groupBox16);
             this.Controls.Add(this.timeLabel);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.sold_label);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label7);
@@ -1266,7 +1266,7 @@ namespace ProjektPW
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        public System.Windows.Forms.Label sold_label;
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.GroupBox groupBox16;
